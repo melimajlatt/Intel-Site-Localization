@@ -1,4 +1,35 @@
 /* ============================================
+   Accessibility Features
+   ============================================ */
+/* Skip to main content link - visible on focus */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: 999;
+  padding: 12px 20px;
+  background-color: var(--intel-blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+  left: 0;
+}
+
+/* Improve focus visibility for better keyboard navigation */
+button:focus,
+input:focus,
+a:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--intel-blue);
+  outline-offset: 2px;
+}
+
+/* ============================================
    Color Palette
    ============================================ */
 :root {
@@ -67,27 +98,46 @@ header p {
   opacity: 0.95;
 }
 
+/* Header subtext styling */
+.header-subtext {
+  font-size: 1.1em;
+  color: #ffffff;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  max-width: 900px;
+  margin: 20px auto 0;
+}
+
 /* ============================================
    Subheading Section
    ============================================ */
 .subheading-section {
   background-color: var(--intel-blue);
-  padding: 50px 40px;
+  padding: 60px 40px;
   text-align: center;
 }
 
-.subheading-section p {
-  font-size: 1.1em;
-  color: var(--white);
-  line-height: 1.8;
+header p {
+  font-size: 1.15em;
   font-weight: 300;
-  letter-spacing: 0.5px;
-  max-width: 900px;
-  margin: 0 auto;
+  letter-spacing: 0.3px;
+  opacity: 0.95;
 }
 
-/* Timeline Cards Section */
-section {
+/* Header subtext styling */
+.header-subtext {
+  font-size: 1.2em;
+  color: #ffffff;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  max-width: 900px;
+  margin: 20px auto 0;
+}
+
+/* Timeline Cards Section - Only for the main timeline, not Bootstrap sections */
+section:not(.container):not(.bg-light) {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -97,8 +147,8 @@ section {
   position: relative;
 }
 
-/* Individual Card Styling */
-section div {
+/* Individual Card Styling - Only for timeline cards */
+section:not(.container):not(.bg-light) div {
   width: 280px;
   background-color: var(--white);
   border: 2px solid var(--grey);
@@ -108,20 +158,20 @@ section div {
   cursor: pointer;
 }
 
-section div:hover {
+section:not(.container):not(.bg-light) div:hover {
   transform: translateY(-8px);
   border-left: 5px solid var(--light-blue);
   box-shadow: 0 12px 28px rgba(0, 113, 197, 0.15);
 }
 
-section div h2 {
+section:not(.container):not(.bg-light) div h2 {
   font-size: 2.2em;
   color: var(--intel-blue);
   margin-bottom: 8px;
   font-weight: 700;
 }
 
-section div h3 {
+section:not(.container):not(.bg-light) div h3 {
   font-size: 1.3em;
   color: var(--dark-grey);
   margin-bottom: 20px;
@@ -130,7 +180,7 @@ section div h3 {
   padding-bottom: 12px;
 }
 
-section div img {
+section:not(.container):not(.bg-light) div img {
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -138,16 +188,202 @@ section div img {
   border: 2px solid var(--light-blue);
 }
 
-section div p {
+section:not(.container):not(.bg-light) div p {
   font-size: 0.95em;
   color: #555;
   line-height: 1.7;
   display: none;
 }
 
-section div:hover p {
+section:not(.container):not(.bg-light) div:hover p {
   display: block;
 }
+
+/* Scroll to view text - center it */
+section:not(.container):not(.bg-light) + p {
+  text-align: center;
+  padding: 20px 40px;
+  background-color: var(--light-grey);
+}
+
+/* ============================================
+   Bootstrap Sections Spacing
+   ============================================ */
+/* Three-Column Pillars Section */
+section.container {
+  padding: 100px 60px !important;
+  margin: 80px auto !important;
+  max-width: 1200px;
+}
+
+section.container h2 {
+  color: var(--intel-blue);
+  font-weight: 700;
+  font-size: 2.2em;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+section.container .row {
+  align-items: stretch;
+  gap: 40px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.container .row {
+  align-items: stretch;
+}
+
+.card {
+  border: none;
+  border-top: 4px solid var(--intel-blue);
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 113, 197, 0.2);
+  transform: translateY(-5px);
+}
+
+.card-title {
+  color: var(--intel-blue);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  color: #555;
+  line-height: 1.7;
+  font-size: 0.95em;
+}
+
+section.container .col-md-4 {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+section.container .card-title {
+  white-space: nowrap;
+}
+
+/* Newsletter Section */
+section.bg-light {
+  background-color: var(--light-grey) !important;
+  padding: 120px 80px !important;
+  margin-top: 100px !important;
+  margin-bottom: 80px !important;
+}
+
+section.bg-light h2 {
+  color: var(--intel-blue);
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 2.2em;
+}
+
+section.bg-light > .container > .row {
+  margin-top: 30px;
+}
+
+section.bg-light p {
+  font-size: 1.05em;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+section.bg-light form {
+  margin-top: 20px;
+}
+
+section.bg-light form .mb-3 {
+  margin-bottom: 25px !important;
+}
+
+section.bg-light form .form-label {
+  color: var(--dark-grey);
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 1.05em;
+  display: block;
+}
+
+section.bg-light .form-control {
+  border: 2px solid var(--grey);
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 1em;
+  line-height: 1.6;
+  transition: border-color 0.3s ease;
+}
+
+section.bg-light .form-control:focus {
+  border-color: var(--intel-blue);
+  box-shadow: 0 0 0 0.2rem rgba(0, 113, 197, 0.25);
+}
+
+section.bg-light .btn-primary {
+  background-color: var(--intel-blue);
+  border-color: var(--intel-blue);
+  font-weight: 600;
+  padding: 14px 30px;
+  font-size: 1.05em;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+section.bg-light .btn-primary:hover {
+  background-color: var(--dark-blue);
+  border-color: var(--dark-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 113, 197, 0.3);
+}
+
+section.bg-light .btn-primary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 113, 197, 0.5);
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-grey) !important;
+  border-top: 3px solid var(--intel-blue);
+  padding: 50px 0 !important;
+  margin-top: 100px;
+}
+
+footer .container {
+  max-width: 1200px;
+  padding: 0 40px;
+}
+
+footer .row {
+  align-items: center;
+  gap: 40px;
+}
+
+footer p {
+  font-size: 1em;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+footer ul li {
+  white-space: nowrap;
+}
+
+footer a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   header h1 {
     font-size: 2.5em;
@@ -160,5 +396,74 @@ section div:hover p {
   section div {
     width: 100%;
     max-width: 400px;
+  }
+
+  /* Timeline section spacing on mobile */
+  section {
+    gap: 40px !important;
+    padding: 80px 30px !important;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+  }
+
+  /* Mobile spacing for sections */
+  section.container {
+    padding: 70px 30px !important;
+    margin: 60px auto !important;
+  }
+
+  section.container h2 {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+  }
+
+  section.bg-light {
+    padding: 80px 30px !important;
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
+  }
+
+  section.bg-light h2 {
+    font-size: 1.8em;
+  }
+
+  section.bg-light > .container > .row {
+    margin-top: 20px;
+  }
+
+  section.container .col-12 {
+    margin-bottom: 20px;
+  }
+
+  section.container .row {
+    gap: 25px !important;
+  }
+
+  /* Footer mobile spacing */
+  footer {
+    padding: 40px 0 !important;
+    margin-top: 60px;
+  }
+
+  footer .container {
+    padding: 0 20px;
+  }
+
+  footer .row {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  footer .col-12 {
+    width: 100%;
+  }
+
+  footer ul {
+    justify-content: center;
+  }
+
+  footer ul li {
+    white-space: normal;
   }
 }

@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore Intel's commitment to sustainability through decades of innovation and environmental responsibility." />
   <title>Intel: Sustainability Through the Ages</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Skip to main content link for keyboard navigation -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Header / Hero Section -->
   <header>
@@ -17,26 +21,23 @@
       <h1>
         Sustainability Through the Ages
       </h1>
+      <!-- Subheading Description -->
+      <p class="header-subtext">
+        Explore Intel's journey through time, discovering how our commitment
+        to Innovation has shaped a more sustainable future for technology 
+        and our planet
+      </p>
     </div>
   </header>
 
-  <!-- Subheading Section -->
-  <section class="subheading-section">
-    <p>
-      Explore Intel's journey through time, discovering how our commitment
-      to Innovation has shaped a more sustainable future for technology 
-      and our planet.
-    </p>
-  </section>
-
   <!-- Timeline Cards Section -->
-  <section>
+  <section id="main-content" aria-label="Intel Timeline">
 
     <!-- Card 1: 1968 -->
-    <div>
+    <div aria-label="Timeline event: Intel Founded in 1968">
       <h2>1968</h2>
       <h3>Intel Founded</h3>
-      <img src="img/1.jpg" alt="Intel Founded" />
+      <img src="img/1.jpg" alt="Intel's founder Robert Noyce" />
       <p>
         Robert Noyce and Gordon Moore rename the newly formed company 
         NM Electronics to Intel Corporation, laying the foundation for 
@@ -116,6 +117,133 @@
       </p>
     </div>
   </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+  <p>Scroll to view timeline | Hover over cards to learn more</p>
+
+  <!-- New Three-Column Bootstrap Grid Section -->
+  <section class="container my-5">
+    <!-- Section Heading -->
+    <h2 class="text-center mb-4">Key Pillars of Sustainability</h2>
+    
+    <!-- Bootstrap Row: Creates a horizontal layout -->
+    <div class="row">
+      
+      <!-- Column 1 -->
+      <div class="col-12 col-md-4 mb-4">
+        <!-- card: Bootstrap component for content blocks -->
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="card-title">Innovation</h3>
+            <p class="card-text">
+              Driving technological advancement that reduces environmental impact 
+              through efficient chip design and manufacturing processes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="card-title">Responsibility</h3>
+            <p class="card-text">
+              Committed to minimizing greenhouse gas emissions, waste, and water 
+              usage across all manufacturing facilities and operations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h3 class="card-title">Inclusivity</h3>
+            <p class="card-text">
+              Working with suppliers, partners, and communities to create shared 
+              value and promote sustainable practices industry-wide.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- End Row -->
+  </section>
+
+  <!-- Newsletter Subscription Section -->
+  <section class="bg-light py-5" aria-label="Newsletter subscription">
+    <!-- Container for centered, responsive content -->
+    <div class="container">
+      <!-- Centered heading and description -->
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6 text-center">
+          <!-- Main heading -->
+          <h2 class="mb-3">See What We're Up To</h2>
+          <!-- Description text -->
+          <p class="mb-4 text-muted">
+            Stay informed about Intel's latest sustainability initiatives and innovations. 
+            Join our newsletter for exclusive updates.
+          </p>
+
+          <!-- Newsletter Form -->
+          <form aria-label="Newsletter subscription form">
+            <!-- Email Input Field -->
+            <div class="mb-3">
+              <label for="emailInput" class="form-label">Email Address <span aria-label="required">*</span></label>
+              <input 
+                type="email" 
+                class="form-control" 
+                id="emailInput" 
+                placeholder="your.email@example.com" 
+                aria-required="true"
+                required>
+            </div>
+
+            <!-- Name Input Field (Optional) -->
+            <div class="mb-3">
+              <label for="nameInput" class="form-label">Name <span class="text-muted">(Optional)</span></label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="nameInput" 
+                placeholder="Your name"
+                aria-label="Your name (optional)">
+            </div>
+
+            <!-- Subscribe Button -->
+            <button type="submit" class="btn btn-primary w-100" aria-label="Subscribe to newsletter">
+              Join Our Newsletter
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white mt-5 py-4">
+    <!-- Footer Container -->
+    <div class="container">
+      <!-- Footer Content Row -->
+      <div class="row">
+        <!-- Copyright Section -->
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <p class="mb-0">&copy; 2024 Intel Corporation. All rights reserved.</p>
+        </div>
+
+        <!-- Navigation Links Section -->
+        <div class="col-12 col-md-6 text-md-end">
+          <ul class="list-unstyled d-flex flex-wrap gap-3 justify-content-md-end">
+            <li><a href="#privacy" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#terms" class="text-white text-decoration-none">Terms of Use</a></li>
+            <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+            <li><a href="#sitemap" class="text-white text-decoration-none">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
