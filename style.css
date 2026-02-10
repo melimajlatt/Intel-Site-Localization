@@ -152,7 +152,7 @@ section:not(.container):not(.bg-light) div {
   width: 280px;
   background-color: var(--white);
   border: 2px solid var(--grey);
-  border-left: 5px solid var(--intel-blue);
+  border-inline-start: 5px solid var(--intel-blue);
   padding: 30px;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -160,7 +160,7 @@ section:not(.container):not(.bg-light) div {
 
 section:not(.container):not(.bg-light) div:hover {
   transform: translateY(-8px);
-  border-left: 5px solid var(--light-blue);
+  border-inline-start: 5px solid var(--light-blue);
   box-shadow: 0 12px 28px rgba(0, 113, 197, 0.15);
 }
 
